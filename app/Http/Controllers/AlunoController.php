@@ -60,14 +60,33 @@ class AlunoController extends Controller
 
     public function edit($id)
     {
+        $aluno = $this->alunos->find($id);
+        $cursos = $this->cursos->all();
+        return view('admin.aluno.crud', compact('aluno', 'cursos'));
     }
 
 
     public function update(Request $request, $id)
     {
+        $data = $request->all();
+        $aluno = $this->alunos->find($id);
+
+        if ($request->hasFile('imagem')) {
+            Storage::disk('public')->delete(substr($aluno->imagem, 9));
+            $data['imagem'] = '/storage/' . $request->file('imagem')->store('aluno', 'public');
+        }
+
+        $aluno->update($data);
+
+        return redirect()->route('aluno.index')->with('success', 'Aluno atualizado com sucesso!');
     }
 
     public function destroy($id)
     {
+        $aluno = $this->alunos->find($id);
+        Storage::disk('public')->delete(substr($aluno->imagem, 9));
+        $aluno->delete();
+        
+        return redirect()->route('aluno.index')->with('success', 'Aluno deletado com sucesso!');
     }
 }

@@ -3,14 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Curso;
+use App\Models\Aluno;
 
 
 class SiteController extends Controller
 {
 
+    private $alunos;
+    private $cursos;
+    private $nomeFiltro;
+
+
+    public function __construct(Aluno $aluno, Curso $curso) {
+        $this->alunos = $aluno;
+        $this->cursos = $curso;
+    }
+
     public function index()
     {
-        return view('site.index');
+        $alunos = $this->alunos->all();
+        $cursos = $this->cursos->all();
+        return view('site.index', compact('cursos', 'alunos'));
     }
 
 
@@ -40,5 +54,10 @@ class SiteController extends Controller
 
     public function destroy($id)
     {
+    }
+
+    public function contratar(Aluno $aluno) {
+        $aluno->update(['formado' => true]);
+        return view('site.index', compact('cursos', 'alunos'));
     }
 }

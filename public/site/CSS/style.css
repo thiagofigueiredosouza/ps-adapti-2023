@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#cabecalho {
+    background: #11101d;
+    /* background: #2ECC71; */
+    /* background: #3498DB; */
+    /* background: #9B59B6; */
+    /* background: #1ABC9C; */
+    /* background: #3498DB; */
+    /* background: #2ECC71; */
+    /* background: #ADD8E6; */
+    /* background: #808080; */
+    /* background: #E74C3C; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px;
+    box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+#cabecalho img {
+    max-height: 50px; /* Ajuste a altura do logo conforme necessário */
+    cursor: pointer;
+}
+
+
+#nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#nav a:hover {
+    color: #d45b16;
+    /* color: #6C7A89; */
+    /* color: #F1C40F; */
+    /* color: #34495E; */
+    /* color: #E74C3C; */
+    /* color: #6C7A89; */
+    /* color: #9B59B6; */
+    /* color: #F1C40F; */
+    /* color: #34495E; */
+    /* color: #1ABC9C; */
+    transition: 0.25s;
+}
+
+#nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+}
+
+aside {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #11101d;
+    overflow-y: auto;
+    /* padding: 20px; */
+    z-index: 0;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.topic {
+    cursor: pointer;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0px 20px;
+    font-size: 1.1em;
+}
+
+.subtopics {
+    display: none;
+    margin-left: 15px;
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.subtopics {
+    margin-top: 10px;
+    background: #1d1b31;
+    margin-bottom: 10px;
+}
+
+.subtopics a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.subtopics a:hover {
+    color: #d45b16;
+    /* color: #6C7A89; */
+    /* color: #F1C40F; */
+    /* color: #34495E; */
+    /* color: #E74C3C; */
+    /* color: #6C7A89; */
+    /* color: #9B59B6; */
+    /* color: #F1C40F; */
+    /* color: #34495E; */
+    /* color: #1ABC9C; */
+    transition: 0.25s;
+}
+
+
+.botao {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 1.0rem;
+    background: #d45b16;
+    /* background: #c7b42c; */
+    /* background: #006666; */
+    /* background: #006400; */
+    /* background: #6C7A89; */
+    /* background: #F1C40F; */
+    /* background: #34495E; */
+    /* background: #E74C3C; */
+    /* background: #6C7A89; */
+    /* background: #9B59B6; */
+    /* background: #F1C40F; */
+    /* background: #34495E; */
+    /* background: #1ABC9C; */
+}
+
+.botao:hover {
+    background: #c25211;
+    transition: 0.25s;
+}
+
+#principal {
+    /* max-width: 100%; */
+    /* background-color: #FFA07A; */
+    margin-left: 370px;
+    margin-right: 110px;
+    margin-top: 40px;
+    /* padding-top: 40px; */
+    /* text-align: center; */
+    /* margin: auto; */
+}
+
+.filtro {
+    position: fixed;
+    top: 1;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background-color: #11101d;
+}
+
+#titulo-filtro {
+    margin-top: 20px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#titulo-filtro i {
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+}
+
+#titulo-filtro span {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.filtro #categorias {
+    height: 100%;
+    padding-top: 10px;
+}
+
+#categorias li {
+    position: relative;
+    list-style: none;
+    transition: all 0.4 ease;
+}
+
+#categorias li:hover {
+    background: #1d1b31;
+}
+
+.filtro #categorias .categoria a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.filtro #categorias .categoria {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.filtro #categorias i {
+    font-size: 20px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.filtro .item-categoria {
+    padding: 6px 6px 14px 60px;
+    margin-top: -10px;
+    background: #1d1b31;
+    display: block;
+    transition: all 0.4 ease;
+}
+
+#categorias .item-categoria a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+#categoria-curso {
+    margin-top: 15px;
+}
+
+#container {
+    /* background: #ba2ecc; */
+    padding-top: 40px;
+    margin: auto;
+}
+
+.card {
+    background: #11101d;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+    border-radius: 1.2rem;
+    padding: 0px 0px;
+    box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.4);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.card .nome-aluno {
+    color: #d45b16;
+}
+
+.card img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.sobre-aluno {
+    padding: 0px 25px 25px 25px;
+}
+
+.curso-aluno, .situacao-aluno {
+    font-size: 0.6rem;
+    font-weight: 400;
+}
+
+
+.situacao-aluno {
+  text-align: right;
+  /* margin-top: 20px; */
+}
+
+.ultimo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.ultimo a {
+  text-decoration: none;
+  color: #fff;
+  background: #d45b16;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+}
+
+.ultimo a:hover {
+  background: #c25211;
+  transition: 0.25s;
+}
+
+#container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 25px;
+}
+
