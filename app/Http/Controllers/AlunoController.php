@@ -52,6 +52,9 @@ class AlunoController extends Controller
 
     public function show($id)
     {
+        $aluno = $this->alunos->find($id);
+        $aluno = $aluno->load('curso');
+        return response()->json($aluno);
     }
 
 
