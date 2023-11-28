@@ -35,8 +35,8 @@ body {
 }
 
 #cabecalho img {
-    max-height: 50px; /* Ajuste a altura do logo conforme necessário */
-    cursor: pointer;
+    max-height: 60px; /* Ajuste a altura do logo conforme necessário */
+    /* cursor: pointer; */
 }
 
 

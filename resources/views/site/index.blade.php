@@ -12,7 +12,7 @@
 </head>
 <body>
     <header id="cabecalho">
-        <img src="./logo.png" alt="logo do site tal">
+        <img src="{{asset('site/IMAGEM/logo.png')}}" alt="logo do site">
         <nav id="nav">
             <ul>
                 <li><a href="#">Todos</a></li>
@@ -57,7 +57,6 @@
             <h1>Todos</h1>
             <div id="container-cards">
             @foreach ($alunos as $aluno)
-            @if($aluno->nome == )
                 <div class="card">
                     <img src="{{$aluno->imagem}}" alt="foto do aluno">
                     <div class="sobre-aluno">
