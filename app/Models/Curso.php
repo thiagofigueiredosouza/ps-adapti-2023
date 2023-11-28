@@ -12,4 +12,8 @@ class Curso extends Model
     protected $fillable = [
         'curso',
     ];
+
+    public function alunos() {
+        return $this->hasMany(Aluno::class);
+    }
 }
