@@ -366,3 +366,14 @@ aside {
     color: #fff;
     margin-left: 10px;
 }
+
+
+@media screen and (min-width: 600px) {
+    #container-cards, #container2-cards, #container3-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-top: 25px;
+        justify-content: center;
+    }
+}
