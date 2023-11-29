@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('site/CSS/style.css')}}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="{{asset('site/JS/script.js')}}"></script>
-    <title>Document</title>
+    <title>Connect Colab</title>
 </head>
 <body id="corpo">
     <header id="cabecalho">
