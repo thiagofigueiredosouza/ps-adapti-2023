@@ -11,6 +11,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+#corpo {
+  background: #fff;
+}
+
 #cabecalho {
     background: #11101d;
     /* background: #2ECC71; */
@@ -253,9 +257,9 @@ aside {
     margin-top: 15px;
 }
 
-#container {
+#container, #container2, #container3 {
     /* background: #ba2ecc; */
-    padding-top: 40px;
+    padding-top: 80px;
     margin: auto;
 }
 
@@ -292,6 +296,12 @@ aside {
     font-weight: 400;
 }
 
+.descricao-aluno {
+  font-size: 0.6rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
 
 .situacao-aluno {
   text-align: right;
@@ -320,10 +330,35 @@ aside {
   transition: 0.25s;
 }
 
-#container-cards {
+#container-cards, #container2-cards, #container3-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
     margin-top: 25px;
 }
 
+.bxs-moon {
+  font-size: 30px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+#div-dark {
+  display: flex;
+  align-items: center;
+}
+
+
+#sol {
+  display: none;
+}
+
+#lua {
+  display: block;
+}
+
+.bxs-sun {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 10px;
+}

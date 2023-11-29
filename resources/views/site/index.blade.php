@@ -10,50 +10,49 @@
     <script src="{{asset('site/JS/script.js')}}"></script>
     <title>Document</title>
 </head>
-<body>
+<body id="corpo">
     <header id="cabecalho">
         <img src="{{asset('site/IMAGEM/logo.png')}}" alt="logo do site">
         <nav id="nav">
             <ul>
-                <li><a href="#">Todos</a></li>
-                <li><a href="#">Contratados</a></li>
-                <li><a href="#">Contratar</a></li>
+                <li><a href="#" onclick="todos()">Todos</a></li>
+                <li><a href="#" onclick="formados()">Formados</a></li>
+                <li><a href="#" onclick="emFormacao()">Em formação</a></li>
             </ul>
         </nav>
-        <a class="botao" href="{{asset('/login')}}">Cadastrar</a>
+        <div id="div-dark">
+          <a class="botao" href="{{asset('/login')}}">Cadastrar</a>
+          <a id="lua" href="#" onclick="trocaPreto()"><i class='bx bxs-moon'></i></a>
+          <a id="sol" href="#" onclick="trocaBranco()"><i class='bx bxs-sun'></i></a>
+        </div>
     </header>
     <main id="principal">
-
-    @foreach ($alunos as $aluno)
-    <p>{{$aluno->nome}}</p>
-    @if ($aluno->contratado)
-      <p>contratado</p>
-    @endif
-    @endforeach
-
-
         <aside>
             <div id="titulo-filtro">
                 <i class='bx bx-filter-alt'></i>
                 <span>Filtrar</span>
             </div>
             <div class="topic" onclick="toggleSubtopics(this)">Nomes
-            @foreach ($alunos as $aluno)
+            
                 <div class="subtopics">
-                    <a href="#">{{$aluno->nome}}</a>
+                @foreach ($alunos as $aluno)
+                    <p><a href="#">{{$aluno->nome}}</a></p>
+                    @endforeach
                 </div>
-            @endforeach
+            
             </div>
             <div class="topic" onclick="toggleSubtopics(this)">Graduação
-            @foreach ($cursos as $curso)
+            
                 <div class="subtopics">
-                    <a href="#">{{$curso->curso}}</a>
+                @foreach ($cursos as $curso)
+                    <p><a href="#">{{$curso->curso}}</a></p>
+                    @endforeach
                 </div>
-            @endforeach
+            
             </div>
         </aside>
 
-        <div id="container">
+        <div id="container" class="containers">
             <h1>Todos</h1>
             <div id="container-cards">
             @foreach ($alunos as $aluno)
@@ -61,35 +60,75 @@
                     <img src="{{$aluno->imagem}}" alt="foto do aluno">
                     <div class="sobre-aluno">
                         <div class="nome-aluno">{{$aluno->nome}}</div>
-                        @foreach ($cursos as $curso)
-                        <p class="curso-aluno">{{$aluno->curso->curso}}</p>
-                        @endforeach
-                        @if($aluno->contratado)
+                        <p class="curso-aluno">{{$aluno->curso->curso}}</p></p>
+                        <p class="descricao-aluno">{{$aluno->descricao}}</p></p>
                         <div class="ultimo">
-                          @if($aluno->formado)
-                          <a href="#">Contratado</a>
-                          @else
                           <a href="#">Contratar</a>
-                          @endif
+                          @if($aluno->contratado)
                           <p class="situacao-aluno">formado</p>
-                        </div>
-                        @else
-                        <div class="ultimo">
-                        @if($aluno->formado)
-                          <a href="#">Contratado
-                          </a>
                           @else
-                          <a href="/">Contratar</a>
-                          @endif
                           <p class="situacao-aluno">em formação</p>
+                          @endif
                         </div>
-                        @endif
                     </div>
                 </div>
             @endforeach
             </div>
         </div>
+
+        <div id="container2" class="containers">
+            <h1>Formados</h1>
+            <div id="container-cards">
+            @foreach ($alunos as $aluno)
+            @if($aluno->contratado)
+                <div class="card">
+                    <img src="{{$aluno->imagem}}" alt="foto do aluno">
+                    <div class="sobre-aluno">
+                        <div class="nome-aluno">{{$aluno->nome}}</div>
+                        <p class="curso-aluno">{{$aluno->curso->curso}}</p></p>
+                        <p class="descricao-aluno">{{$aluno->descricao}}</p></p>
+                        <div class="ultimo">
+                          <a href="#">Contratar</a>
+                          <p class="situacao-aluno">formado</p>
+                        </div>
+                    </div>
+                </div>
+                @endif
+            @endforeach
+            </div>
+        </div>
+
+
+        <div id="container3" class="containers">
+            <h1>Formados</h1>
+            <div id="container-cards">
+            @foreach ($alunos as $aluno)
+            @if(!$aluno->contratado)
+                <div class="card">
+                    <img src="{{$aluno->imagem}}" alt="foto do aluno">
+                    <div class="sobre-aluno">
+                        <div class="nome-aluno">{{$aluno->nome}}</div>
+                        <p class="curso-aluno">{{$aluno->curso->curso}}</p></p>
+                        <p class="descricao-aluno">{{$aluno->descricao}}</p></p>
+                        <div class="ultimo">
+                          <a href="#">Contratar</a>
+                          <p class="situacao-aluno">formado</p>
+                        </div>
+                    </div>
+                </div>
+                @endif
+            @endforeach
+            </div>
+        </div>
+
     </main>
+
+    <script>
+      function toggleSubtopics(topic) {
+  const subtopics = topic.querySelector('.subtopics');
+  subtopics.style.display = subtopics.style.display === 'block' ? 'none' : 'block';
+}
+    </script>
 
 </body>
 </html>
