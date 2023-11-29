@@ -263,6 +263,10 @@ aside {
     margin: auto;
 }
 
+#container2, #container3 {
+    display: none;
+}
+
 .card {
     background: #11101d;
     display: flex;

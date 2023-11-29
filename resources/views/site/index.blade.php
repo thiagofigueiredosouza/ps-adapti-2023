@@ -100,7 +100,7 @@
 
 
         <div id="container3" class="containers">
-            <h1>Formados</h1>
+            <h1>Em formação</h1>
             <div id="container-cards">
             @foreach ($alunos as $aluno)
             @if(!$aluno->contratado)
